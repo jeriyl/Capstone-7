@@ -4,10 +4,16 @@ import numpy as np
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 import re
+def setting_bg():
+    st.markdown(f""" <style>.stApp {{
+                        background:url("https://img.freepik.com/premium-vector/white-elegant-blue-background_662550-436.jpg");
+                        background-size: cover}}
+                     </style>""", unsafe_allow_html=True)
+setting_bg()
 
 # Load the pre-trained model
 loaded_model = pickle.load(open(r'C:\Users\91822\OneDrive\Documents\Final Project\Twitter-Sentiment-Analysis\trained_model_logisticRegression.pkl', "rb"))
-
+loaded_model1 = pickle.load(open(r'C:\Users\91822\OneDrive\Documents\Final Project\Twitter-Sentiment-Analysis\trained_model_RandomForestClassifier.pkl',"rb"))
 # Load the TfidfVectorizer
 vectorizer = pickle.load(open(r'C:\Users\91822\OneDrive\Documents\Final Project\Twitter-Sentiment-Analysis\trained_model_tfidfvectorizer.pkl', "rb"))
 
@@ -23,13 +29,13 @@ def stemming(content):
     return stemmed_content
 
 # Set up the Streamlit app
-st.title("Twitter Sentiment Analysis")
+st.markdown("<p style='font-size:38px; color:blue; font-weight:bold;'>Twitter Sentiment Analysis</p>", unsafe_allow_html=True)
 
 # Get the input tweet from the user
 tweet = st.text_area("Enter a tweet:", height=200)
 
 # Add a "Analyze" button
-if st.button("Analyze"):
+if st.button("Analyze Based On Logistic Regression"):
     # Preprocess the input tweet
     preprocessed_tweet = stemming(tweet)
 
@@ -41,6 +47,16 @@ if st.button("Analyze"):
 
     # Display the sentiment
     if prediction[0] == 0:
-        st.write("Negative Tweet")
+        st.error("Negative Tweet")
     else:
-        st.write("Positive Tweet")
+        st.success("Positive Tweet")
+
+if st.button("Analyse Based on Random Forest"):
+    preprocessed_tweet = stemming(tweet)
+    X_input = vectorizer.transform([preprocessed_tweet])
+    prediction = loaded_model1.predict(X_input)
+    if prediction[0] == 0:
+        st.error("Negative Tweet")
+    else:
+        st.success("Positive Tweet")
+
