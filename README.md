@@ -35,5 +35,7 @@ In conclusion, the outlined approach provides a structured framework for buildin
 
 ## Project Preview: ##
 
-![alt text](image.png)
-![alt text](image-1.png)
+<img width="572" alt="image" src="https://github.com/jeriyl/capstone7/assets/125750321/aab83857-5cf9-4dbe-845d-45cb92ae5f2b">
+
+<img width="578" alt="image" src="https://github.com/jeriyl/capstone7/assets/125750321/3fe4a9e4-b507-4b30-b5cd-545313b8e78f">
+
