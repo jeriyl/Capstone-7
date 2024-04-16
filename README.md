@@ -34,8 +34,6 @@ To build machine learning models for Twitter sentiment analysis, you can follow 
 In conclusion, the outlined approach provides a structured framework for building machine learning models for Twitter sentiment analysis. By combining data collection, preprocessing, model selection, and evaluation, we can effectively uncover insights from Twitter data. Continuous monitoring and improvement ensure the models remain relevant and reliable for understanding sentiments and trends on the platform.
 
 ## Project Preview: ##
-
-<img width="572" alt="image" src="https://github.com/jeriyl/capstone7/assets/125750321/aab83857-5cf9-4dbe-845d-45cb92ae5f2b">
-
-<img width="578" alt="image" src="https://github.com/jeriyl/capstone7/assets/125750321/3fe4a9e4-b507-4b30-b5cd-545313b8e78f">
+![alt text](image.png)
+![alt text](image-1.png)
 

@@ -4,9 +4,10 @@ import numpy as np
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 import re
+
 def setting_bg():
     st.markdown(f""" <style>.stApp {{
-                        background:url("https://img.freepik.com/premium-vector/white-elegant-blue-background_662550-436.jpg");
+                        background:url("https://img.freepik.com/free-vector/paper-style-dynamic-lines-background_23-2149011157.jpg?size=626&ext=jpg&ga=GA1.1.1509970681.1712564322&semt=ais");
                         background-size: cover}}
                      </style>""", unsafe_allow_html=True)
 setting_bg()
@@ -29,13 +30,13 @@ def stemming(content):
     return stemmed_content
 
 # Set up the Streamlit app
-st.markdown("<p style='font-size:38px; color:blue; font-weight:bold;'>Twitter Sentiment Analysis</p>", unsafe_allow_html=True)
+st.markdown("<p style='font-size:38px; color:White; font-weight:bold;'>Twitter Sentiment Analysis</p>", unsafe_allow_html=True)
 
 # Get the input tweet from the user
 tweet = st.text_area("Enter a tweet:", height=200)
 
 # Add a "Analyze" button
-if st.button("Analyze Based On Logistic Regression"):
+if st.button("Predict the Status"):
     # Preprocess the input tweet
     preprocessed_tweet = stemming(tweet)
 
@@ -51,12 +52,15 @@ if st.button("Analyze Based On Logistic Regression"):
     else:
         st.success("Positive Tweet")
 
-if st.button("Analyse Based on Random Forest"):
-    preprocessed_tweet = stemming(tweet)
-    X_input = vectorizer.transform([preprocessed_tweet])
-    prediction = loaded_model1.predict(X_input)
-    if prediction[0] == 0:
-        st.error("Negative Tweet")
-    else:
-        st.success("Positive Tweet")
+st.markdown("<p style='font-size:28px; color:White; font-weight:bold;'>Sample Tweets</p>", unsafe_allow_html=True)
 
+# Display the sample tweets
+sample_tweets = [
+    "Congratulations Team India for a spectacular win! 🇮🇳🏆 Dominating performance that makes the nation proud. #TeamIndia #Cricket #Victory",
+    "Though India lost the match, the spirit of the game lives on. Chin up, Team India! 🇮🇳 #Cricket #TeamIndia #KeepFighting",
+    "Today has been a rough day. Nothing seems to be going right. 😔 #BadDay"
+
+]
+
+for idx, sample_tweet in enumerate(sample_tweets, start=1):
+    st.write(f"{idx}. {sample_tweet}")
