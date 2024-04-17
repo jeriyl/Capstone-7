@@ -21,7 +21,7 @@ def load_lottieurl(url):
         return None
     return r.json()
 
-lottie_coding=load_lottieurl("https://lottie.host/304662f4-751f-4ec6-bf94-5633f32de03e/aOWpvskzxm.json")
+lottie_coding=load_lottieurl("https://lottie.host/embed/2509bcd5-d534-49d9-92e2-8f29b1f1f17c/jidKjZi27Q.json")
 
 # Load the pre-trained model
 loaded_model = pickle.load(open(r'trained_model_logisticRegression.pkl', "rb"))
