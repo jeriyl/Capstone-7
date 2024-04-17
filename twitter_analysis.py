@@ -6,6 +6,8 @@ from nltk.corpus import stopwords
 import re
 from streamlit_lottie import st_lottie
 import requests
+import nltk
+nltk.download('stopwords')
 
 st.set_page_config(page_title="Twitter Sentiment Analysis",page_icon=":blue_heart:",layout="wide")
 def setting_bg():
