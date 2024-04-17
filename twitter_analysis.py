@@ -12,8 +12,7 @@ nltk.download('stopwords')
 st.set_page_config(page_title="Twitter Sentiment Analysis",page_icon=":blue_heart:")
 def setting_bg():
     st.markdown(f""" <style>.stApp {{
-                        background:url("https://img.freepik.com/free-vector/paper-style-dynamic-lines-background_23-2149011157.jpg?size=626&ext=jpg&ga=GA1.1.1509970681.1712564322&semt=ais");
-                        background-size: cover}}
+                        background: linear-gradient(to bottom, #87CEEB, #4682B4);}}
                      </style>""", unsafe_allow_html=True)
 setting_bg()
 def load_lottieurl(url):
