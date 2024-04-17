@@ -23,10 +23,10 @@ def load_lottieurl(url):
 lottie_coding=load_lottieurl("https://lottie.host/304662f4-751f-4ec6-bf94-5633f32de03e/aOWpvskzxm.json")
 
 # Load the pre-trained model
-loaded_model = pickle.load(open(r'C:\Users\91822\OneDrive\Documents\Final Project\Twitter-Sentiment-Analysis\trained_model_logisticRegression.pkl', "rb"))
-loaded_model1 = pickle.load(open(r'C:\Users\91822\OneDrive\Documents\Final Project\Twitter-Sentiment-Analysis\trained_model_RandomForestClassifier.pkl',"rb"))
+loaded_model = pickle.load(open(r'trained_model_logisticRegression.pkl', "rb"))
+loaded_model1 = pickle.load(open(r'trained_model_RandomForestClassifier.pkl',"rb"))
 # Load the TfidfVectorizer
-vectorizer = pickle.load(open(r'C:\Users\91822\OneDrive\Documents\Final Project\Twitter-Sentiment-Analysis\trained_model_tfidfvectorizer.pkl', "rb"))
+vectorizer = pickle.load(open(r'trained_model_tfidfvectorizer.pkl', "rb"))
 
 # Define the stemming function
 port_stem = PorterStemmer()
