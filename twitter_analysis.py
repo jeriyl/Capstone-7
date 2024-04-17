@@ -4,13 +4,23 @@ import numpy as np
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 import re
+from streamlit_lottie import st_lottie
+import requests
 
+st.set_page_config(page_title="Twitter Sentiment Analysis",page_icon=":blue_heart:",layout="wide")
 def setting_bg():
     st.markdown(f""" <style>.stApp {{
                         background:url("https://img.freepik.com/free-vector/paper-style-dynamic-lines-background_23-2149011157.jpg?size=626&ext=jpg&ga=GA1.1.1509970681.1712564322&semt=ais");
                         background-size: cover}}
                      </style>""", unsafe_allow_html=True)
 setting_bg()
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottie_coding=load_lottieurl("https://lottie.host/304662f4-751f-4ec6-bf94-5633f32de03e/aOWpvskzxm.json")
 
 # Load the pre-trained model
 loaded_model = pickle.load(open(r'C:\Users\91822\OneDrive\Documents\Final Project\Twitter-Sentiment-Analysis\trained_model_logisticRegression.pkl', "rb"))
@@ -29,13 +39,18 @@ def stemming(content):
     stemmed_content = " ".join(stemmed_content)
     return stemmed_content
 
-# Set up the Streamlit app
-st.markdown("<p style='font-size:38px; color:White; font-weight:bold;'>Twitter Sentiment Analysis</p>", unsafe_allow_html=True)
+title_column, lottie_column = st.columns([1, 0.3])
 
-# Get the input tweet from the user
+# Title in the left column
+with title_column:
+    st.markdown("<p style='font-size:38px; color:White; text-align:right; font-weight:bold;'>Twitter Sentiment Analysis</p>", unsafe_allow_html=True)
+
+# Lottie animation in the right column
+with lottie_column:
+    st_lottie(lottie_coding, height=80, key="coding")
+
 tweet = st.text_area("Enter a tweet:", height=200)
 
-# Add a "Analyze" button
 if st.button("Predict the Status"):
     # Preprocess the input tweet
     preprocessed_tweet = stemming(tweet)
