@@ -7,7 +7,7 @@ import re
 from streamlit_lottie import st_lottie
 import requests
 
-st.set_page_config(page_title="Twitter Sentiment Analysis",page_icon=":blue_heart:",layout="wide")
+st.set_page_config(page_title="Twitter Sentiment Analysis",page_icon=":blue_heart:")
 def setting_bg():
     st.markdown(f""" <style>.stApp {{
                         background:url("https://c4.wallpaperflare.com/wallpaper/154/47/615/twitter-social-networks-wallpaper-preview.jpg");
