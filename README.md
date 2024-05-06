@@ -35,5 +35,6 @@ In conclusion, the outlined approach provides a structured framework for buildin
 
 ## Project Preview: ##
 ![alt text](image.png)
-![alt text](image-1.png)
+<img width="860" alt="image" src="https://github.com/jeriyl/Twitter-Sentiment-Analysis/assets/125750321/098323af-3b80-4e8a-a03d-a88682d18f1a">
+
 
